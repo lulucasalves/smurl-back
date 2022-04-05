@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server')
 
-const router = gql`
+const routerUser = gql`
   type User {
     id: ID
     user: String
@@ -9,6 +9,7 @@ const router = gql`
     phone: String
     confirmed: Boolean
     number_urls: Int
+    created_at: String
   }
 
   type Auth {
@@ -23,7 +24,9 @@ const router = gql`
   type Mutation {
     createUser(user: String!, email: String!, password: String!): User!
     login(email: String!, password: String!): Auth!
+    editUser(user: String!, email: String!, phone: String!): User!
+    deleteUser: User!
   }
 `
 
-module.exports = router
+module.exports = routerUser
