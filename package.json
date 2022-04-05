@@ -4,14 +4,20 @@
   "main": "./src/server.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ./src/server.js",
-    "dev": "nodemon ./src/server.js",
-    "test": "jest --watchAll --testPathPattern=src/api/v1.0.0/tests"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --watchAll --testPathPattern=src/api/tests"
   },
   "dependencies": {
+    "apollo-server": "^3.6.7",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+    "graphql": "^16.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "password-hash": "^1.2.2",
+    "pg": "^8.7.3",
+    "sequelize": "^6.18.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "jest": "^27.4.7",
