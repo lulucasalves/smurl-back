@@ -2,7 +2,7 @@ const CreateUrl = require('../../controllers/Urls/createUrl')
 const DeleteUrl = require('../../controllers/Urls/deleteUrl')
 const EditUrl = require('../../controllers/Urls/editUrl')
 const GetUrls = require('../../controllers/Urls/getUrls')
-const decodeToken = require('../../middlewares/auth')
+const decodeToken = require('../../middlewares/authNormal')
 
 module.exports = {
   Query: {

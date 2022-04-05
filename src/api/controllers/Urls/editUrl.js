@@ -6,8 +6,10 @@ async function EditUrl(id, name, link) {
       name,
       link
     },
-    { where: id }
+    { where: { id } }
   )
+
+  return { name, link }
 }
 
 module.exports = EditUrl

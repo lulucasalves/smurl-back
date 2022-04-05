@@ -1,5 +1,5 @@
 const { ApolloServer } = require('apollo-server')
-const { typeDefs, resolvers } = require('./routers')
+const { typeDefs, resolvers } = require('./services')
 require('./config/db')
 
 const app = new ApolloServer({

@@ -7,8 +7,10 @@ async function EditUser(id, user, email, phone) {
       email,
       phone
     },
-    { where: id }
+    { where: { id } }
   )
+
+  return { user, email, phone }
 }
 
 module.exports = EditUser

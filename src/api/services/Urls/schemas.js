@@ -18,9 +18,9 @@ const routerUrl = gql`
   }
 
   type Mutation {
-    createUrl(name: String!, link: String!): IUrls!
-    editUrl(id: String!, name: String!, link: String!): IUrls!
-    deleteUrl(id: String!): IUrls!
+    createUrl(name: String!, link: String!): IUrls
+    editUrl(id: String!, name: String!, link: String!): IUrls
+    deleteUrl(id: String!): IUrls
   }
 `
 

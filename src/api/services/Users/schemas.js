@@ -18,14 +18,15 @@ const routerUser = gql`
   }
 
   type Query {
-    getUsers(id: String!): User!
+    getUser: User!
   }
 
   type Mutation {
     createUser(user: String!, email: String!, password: String!): User!
     login(email: String!, password: String!): Auth!
-    editUser(user: String!, email: String!, phone: String!): User!
-    deleteUser: User!
+    editUser(user: String!, email: String!, phone: String!): User
+    deleteUser: User
+    githubAuth(code: String!): Auth
   }
 `
 

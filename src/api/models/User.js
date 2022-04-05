@@ -7,19 +7,22 @@ const User = database.define('users', {
     type: Sequelize.STRING,
     allowNull: false,
     defaultValue: uuid(),
-    primaryKey: true
+    primaryKey: true,
+    unique: true
   },
   user: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    unique: true
   },
   email: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    unique: true
   },
   password: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
   },
   phone: {
     type: Sequelize.STRING,

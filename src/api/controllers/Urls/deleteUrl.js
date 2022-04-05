@@ -1,7 +1,7 @@
 const Url = require('../../models/Url')
 
 async function DeleteUrl(id) {
-  await Url.delete({ where: id })
+  await Url.destroy({ where: { id } })
 }
 
 module.exports = DeleteUrl
