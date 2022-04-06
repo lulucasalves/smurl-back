@@ -17,6 +17,7 @@
     "jsonwebtoken": "^8.5.1",
     "password-hash": "^1.2.2",
     "pg": "^8.7.3",
+    "query-string": "^7.1.1",
     "sequelize": "^6.18.0",
     "uuid": "^8.3.2"
   },
