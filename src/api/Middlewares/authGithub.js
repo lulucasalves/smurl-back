@@ -15,15 +15,13 @@ async function GithubAuth(code) {
     headers: { Accept: 'application/json' }
   })
 
-  const response = await axios.get('https://api.github.com/user', {
+  const { data } = await axios.get('https://api.github.com/user', {
     headers: {
       authorization: `Bearer ${accessTokenResponse.access_token}`
     }
   })
 
-  const { email } = response.data
-
-  return email
+  return data.email
 }
 
 module.exports = GithubAuth

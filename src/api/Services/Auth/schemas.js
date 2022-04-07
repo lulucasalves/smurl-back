@@ -10,5 +10,6 @@ module.exports = gql`
     login(email: String!, password: String!): Auth!
     githubLogin(code: String!): Auth!
     facebookLogin(code: String!): Auth!
+    googleLogin(code: String!): Auth!
   }
 `

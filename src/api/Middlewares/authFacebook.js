@@ -3,16 +3,16 @@ require('dotenv/config')
 const axios = require('axios')
 
 async function FacebookAuth(code) {
-  const stringifiedParams = queryString.stringify({
-    client_id: '505575514434067',
-    redirect_uri: 'https://smurl.com/',
-    scope: 'email',
-    response_type: 'code'
-  })
+  // const stringifiedParams = queryString.stringify({
+  //   client_id: '505575514434067',
+  //   redirect_uri: 'https://smurl.com/',
+  //   scope: 'email',
+  //   response_type: 'code'
+  // })
 
-  const facebookLoginUrl = `https://www.facebook.com/v4.0/dialog/oauth?${stringifiedParams}`
+  // const facebookLoginUrl = `https://www.facebook.com/v4.0/dialog/oauth?${stringifiedParams}`
 
-  console.log(facebookLoginUrl)
+  // console.log(facebookLoginUrl)
 
   const { data: token } = await axios({
     url: 'https://graph.facebook.com/v4.0/oauth/access_token',

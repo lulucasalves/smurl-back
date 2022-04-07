@@ -1,5 +1,5 @@
 const app = require('./api/app')
-const FacebookAuth = require('./api/Middlewares/authFacebook')
+const GoogleAuth = require('./api/Middlewares/authGoogle')
 require('dotenv/config')
 
 const port = process.env.PORT || 4002

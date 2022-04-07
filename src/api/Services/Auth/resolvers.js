@@ -1,5 +1,6 @@
 const FacebookLogin = require('../../Controllers/Authentication/facebook')
 const GithubLogin = require('../../Controllers/Authentication/github')
+const GoogleLogin = require('../../Controllers/Authentication/google')
 const Login = require('../../Controllers/Users/login')
 
 module.exports = {
@@ -12,6 +13,9 @@ module.exports = {
     },
     facebookLogin: async (_, { code }) => {
       return await FacebookLogin(code)
+    },
+    googleLogin: async (_, { code }) => {
+      return await GoogleLogin(code)
     }
   }
 }
