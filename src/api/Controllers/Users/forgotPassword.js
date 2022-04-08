@@ -10,7 +10,7 @@ async function ForgotPassword(email) {
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'smurl.contact@gmail.com',
+        user: process.env.GMAIL_EMAIL,
         pass: process.env.GMAIL_PASSWORD
       }
     })
