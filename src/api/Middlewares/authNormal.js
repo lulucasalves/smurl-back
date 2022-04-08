@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const { secret_token } = require('../Config/auth')
 
-function NormalAuth(req, requireAuth = true) {
+function DecodeToken(req) {
   const header = req.request
 
   if (header) {
@@ -11,11 +11,8 @@ function NormalAuth(req, requireAuth = true) {
 
     return decoded
   }
-  if (requireAuth) {
-    return { message: 'Login in to access resource', error: true }
-  }
 
   return null
 }
 
-module.exports = NormalAuth
+module.exports = DecodeToken

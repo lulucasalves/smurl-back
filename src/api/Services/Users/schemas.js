@@ -16,14 +16,20 @@ module.exports = gql`
     message: String!
   }
 
+  type Token {
+    token: String!
+  }
+
   type Query {
     getUser: User!
   }
 
   type Mutation {
-    createUser(email: String!, password: String!): User!
+    forgotPassword(email: String!): Response!
+    returnForgotPassword(token: String!, newPassword: String!): Response!
+    createUser(email: String!, password: String!): Token!
     editUser(email: String!, phone: String!): Response!
-    changePassword(oldPassword: String!, newPassword: String!): User
+    changePassword(oldPassword: String!, newPassword: String!): Response!
     deleteUser: Response!
   }
 `

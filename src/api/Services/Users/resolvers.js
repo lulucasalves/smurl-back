@@ -4,6 +4,7 @@ const GetUsers = require('../../Controllers/Users/getUsers')
 const Register = require('../../Controllers/Users/register')
 const decodeToken = require('../../Middlewares/authNormal')
 const ChangePassword = require('../../Controllers/Users/changePassword')
+const ForgotPassword = require('../../Controllers/Users/forgotPassword')
 
 module.exports = {
   Query: {
@@ -28,7 +29,10 @@ module.exports = {
         return await EditUser(auth.sub, email, phone)
       }
 
-      return null
+      return { error: true, message: 'invalid token' }
+    },
+    forgotPassword: async (_, { email }) => {
+      return await ForgotPassword(email)
     },
     changePassword: async (_, { oldPassword, newPassword }, context) => {
       const auth = decodeToken(context)
@@ -37,7 +41,16 @@ module.exports = {
         return await ChangePassword(auth.sub, oldPassword, newPassword)
       }
 
-      return null
+      return { error: true, message: 'invalid token' }
+    },
+    returnForgotPassword: async (_, { token, newPassword }) => {
+      const auth = decodeToken(token)
+
+      if (auth) {
+        return await ChangePassword(auth.sub, newPassword)
+      }
+
+      return { error: true, message: 'invalid token' }
     },
     deleteUser: async (_, args, context) => {
       const auth = decodeToken(context)
@@ -46,7 +59,7 @@ module.exports = {
         return await DeleteUser(auth.sub)
       }
 
-      return null
+      return { error: true, message: 'invalid token' }
     }
   }
 }

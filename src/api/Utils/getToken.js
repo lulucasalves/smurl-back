@@ -8,7 +8,7 @@ function GetToken(id) {
       expiresIn: expires_in_token
     })
 
-    return { token, id }
+    return { token }
   }
 
   return null

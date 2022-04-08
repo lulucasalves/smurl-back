@@ -3,6 +3,10 @@ const { typeDefs, resolvers } = require('./Services')
 require('./Config/db')
 
 const app = new ApolloServer({
+  cors: {
+    origin: '*',
+    credentials: true
+  },
   typeDefs,
   resolvers,
   context: ({ req }) => ({

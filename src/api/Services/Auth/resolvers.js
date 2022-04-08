@@ -1,7 +1,7 @@
 const FacebookLogin = require('../../Controllers/Authentication/facebook')
 const GithubLogin = require('../../Controllers/Authentication/github')
 const GoogleLogin = require('../../Controllers/Authentication/google')
-const Login = require('../../Controllers/Users/login')
+const Login = require('../../Controllers/Authentication/login')
 
 module.exports = {
   Mutation: {

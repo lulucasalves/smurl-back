@@ -1,15 +1,14 @@
 const { gql } = require('apollo-server')
 
 module.exports = gql`
-  type Auth {
+  type Token {
     token: String!
-    id: String!
   }
 
   type Mutation {
-    login(email: String!, password: String!): Auth!
-    githubLogin(code: String!): Auth!
-    facebookLogin(code: String!): Auth!
-    googleLogin(code: String!): Auth!
+    login(email: String!, password: String!): Token!
+    githubLogin(code: String!): Token!
+    facebookLogin(code: String!): Token!
+    googleLogin(code: String!): Token!
   }
 `

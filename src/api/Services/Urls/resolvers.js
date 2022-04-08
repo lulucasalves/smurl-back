@@ -13,7 +13,7 @@ module.exports = {
         return JSON.parse(await GetUrls(auth.sub))
       }
 
-      return null
+      return { error: true, message: 'invalid token' }
     }
   },
   Mutation: {
@@ -24,7 +24,7 @@ module.exports = {
         return await CreateUrl(name, link, auth.sub)
       }
 
-      return null
+      return { error: true, message: 'invalid token' }
     },
     editUrl: async (_, { id, name, link }, context) => {
       const auth = decodeToken(context)
@@ -33,7 +33,7 @@ module.exports = {
         return await EditUrl(id, name, link)
       }
 
-      return null
+      return { error: true, message: 'invalid token' }
     },
     deleteUrl: async (_, { id }, context) => {
       const auth = decodeToken(context)
@@ -42,7 +42,7 @@ module.exports = {
         return await DeleteUrl(id)
       }
 
-      return null
+      return { error: true, message: 'invalid token' }
     }
   }
 }

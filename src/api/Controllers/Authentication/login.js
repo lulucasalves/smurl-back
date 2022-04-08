@@ -8,12 +8,12 @@ async function Login(email, password) {
   if (getUsers.password) {
     const passwordPass = passwordhash.verify(password, getUsers.password)
 
-    if (getUsers && passwordPass) {
-      GetToken(getUsers.id)
+    if (passwordPass) {
+      return GetToken(getUsers.id)
     }
   }
 
-  return false
+  return null
 }
 
 module.exports = Login
