@@ -5,6 +5,9 @@ const Register = require('../../Controllers/Users/register')
 const decodeToken = require('../../Middlewares/authNormal')
 const ChangePassword = require('../../Controllers/Users/changePassword')
 const ForgotPassword = require('../../Controllers/Users/forgotPassword')
+const { secret_email_token } = require('../../Config/auth')
+const jwt = require('jsonwebtoken')
+const ReturnForgotPassword = require('../../Controllers/Users/returnForgotPassword')
 
 module.exports = {
   Query: {
@@ -44,10 +47,10 @@ module.exports = {
       return { error: true, message: 'invalid token' }
     },
     returnForgotPassword: async (_, { token, newPassword }) => {
-      const auth = decodeToken(token)
+      const auth = jwt.verify(token, secret_email_token)
 
       if (auth) {
-        return await ChangePassword(auth.sub, newPassword)
+        return await ReturnForgotPassword(auth.sub, newPassword)
       }
 
       return { error: true, message: 'invalid token' }

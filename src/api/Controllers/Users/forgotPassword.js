@@ -24,7 +24,7 @@ async function ForgotPassword(email) {
       from: 'smurl.contact@gmail.com',
       to: email,
       subject: 'Smurl - Change your password',
-      html: `<p>Hello user, did you forget your password?</p> <br/> <a href="http://localhost:3000/forgot-password/change?token=${token}" >Click here to change your password!</a> <br/> <p>If not you, please ignore this message.</p>`
+      html: `<p>Hello user, did you forget your password?</p> <br/> <a href="http://localhost:3000/resetPassword?token=${token}" >Click here to change your password!</a> <br/> <p>If not you, please ignore this message.</p>`
     }
 
     transporter.sendMail(mailOptions, (err, info) => {
