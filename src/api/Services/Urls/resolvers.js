@@ -39,7 +39,7 @@ module.exports = {
       const auth = decodeToken(context)
 
       if (auth) {
-        return await DeleteUrl(id)
+        return await DeleteUrl(id, auth.sub)
       }
 
       return { error: true, message: 'invalid token' }

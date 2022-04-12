@@ -23,7 +23,8 @@ const Url = database.define('urls', {
   },
   name: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    unique: true
   }
 })
 
