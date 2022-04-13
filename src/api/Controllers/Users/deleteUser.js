@@ -5,13 +5,17 @@ const GetUrls = require('../Urls/getUrls')
 async function DeleteUser(id) {
   const getUrls = JSON.parse(await GetUrls(id))
 
-  getUrls.map(async ({ id }) => {
-    await DeleteUrl(id)
+  let urlMap = getUrls.map(async ({ id: urlId }) => {
+    await DeleteUrl(urlId, id)
+
+    return
   })
 
-  await User.destroy({ where: { id } })
+  Promise.all(urlMap).then(async () => {
+    await User.destroy({ where: { id } })
 
-  return { error: false, message: 'Account deleted' }
+    return { error: false, message: 'Account deleted' }
+  })
 }
 
 module.exports = DeleteUser

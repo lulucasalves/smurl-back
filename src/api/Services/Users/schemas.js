@@ -30,6 +30,6 @@ module.exports = gql`
     createUser(email: String!, password: String!): Token!
     editUser(email: String!, phone: String!): Response!
     changePassword(oldPassword: String!, newPassword: String!): Response!
-    deleteUser: Response!
+    deleteUser: Response
   }
 `

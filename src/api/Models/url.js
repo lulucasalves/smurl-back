@@ -7,7 +7,8 @@ const Url = database.define('urls', {
     type: Sequelize.STRING,
     allowNull: false,
     defaultValue: uuid(),
-    primaryKey: true
+    primaryKey: true,
+    unique: true
   },
   user_id: {
     type: Sequelize.STRING,

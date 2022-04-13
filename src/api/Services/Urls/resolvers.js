@@ -2,6 +2,7 @@ const CreateUrl = require('../../Controllers/Urls/createUrl')
 const DeleteUrl = require('../../Controllers/Urls/deleteUrl')
 const EditUrl = require('../../Controllers/Urls/editUrl')
 const GetUrls = require('../../Controllers/Urls/getUrls')
+const GetUrl = require('../../Controllers/Urls/getUrl')
 const decodeToken = require('../../Middlewares/authNormal')
 
 module.exports = {
@@ -14,6 +15,9 @@ module.exports = {
       }
 
       return { error: true, message: 'invalid token' }
+    },
+    getUrl: async (_, { name }) => {
+      return JSON.parse(await GetUrl(name))
     }
   },
   Mutation: {

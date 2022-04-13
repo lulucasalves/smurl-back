@@ -8,14 +8,15 @@ module.exports = gql`
 
   type Get {
     user_id: String
-    name: String!
-    link: String!
+    name: String
+    link: String
     created_at: String
     id: String
   }
 
   type Query {
     getUrls: [Get!]!
+    getUrl(name: String!): Get!
   }
 
   type Mutation {
