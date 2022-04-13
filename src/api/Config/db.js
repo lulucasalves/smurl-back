@@ -11,7 +11,6 @@ const database = new Sequelize(process.env.URL_DB, {
 ;(async () => {
   try {
     await database.sync()
-    console.log('init database')
   } catch (error) {
     console.log(`database ERROR ${error}`)
   }

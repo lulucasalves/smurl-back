@@ -4,9 +4,6 @@ const passwordhash = require('password-hash')
 async function ReturnForgotPassword(id, newPassword) {
   const getUsers = await User.findOne({ where: { id } })
 
-  console.log(getUsers)
-  console.log(getUsers.password)
-
   const passwordHash = passwordhash.generate(newPassword)
 
   if (getUsers.password) {

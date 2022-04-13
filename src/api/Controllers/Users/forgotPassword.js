@@ -27,10 +27,7 @@ async function ForgotPassword(email) {
       html: `<p>Hello user, did you forget your password?</p> <br/> <a href="https://smurl.ml/resetPassword?token=${token}" >Click here to change your password!</a> <br/> <p>If not you, please ignore this message.</p>`
     }
 
-    transporter.sendMail(mailOptions, (err, info) => {
-      if (err) console.log(err)
-      else console.log(info)
-    })
+    transporter.sendMail(mailOptions)
 
     return { error: false, message: 'token sended' }
   }
