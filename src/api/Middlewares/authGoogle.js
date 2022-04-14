@@ -13,7 +13,7 @@ async function GoogleAuth(unformattedCode) {
       client_id:
         '335515854068-rvno823ke8nn6tcjnsbi22el62dspanu.apps.googleusercontent.com',
       client_secret: process.env.GOOGLE_SECRET,
-      redirect_uri: 'https://smurl.com',
+      redirect_uri: 'https://smurl.ml/google',
       grant_type: 'authorization_code',
       code
     }

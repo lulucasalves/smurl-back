@@ -8,7 +8,7 @@ async function FacebookAuth(code) {
     params: {
       client_id: '505575514434067',
       client_secret: process.env.FACEBOOK_SECRET,
-      redirect_uri: 'https://smurl.com/',
+      redirect_uri: 'https://smurl.ml/facebook',
       code
     }
   })
